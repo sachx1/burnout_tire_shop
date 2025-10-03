@@ -1,0 +1,20 @@
+.formCard {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    gap: 20px;
+    border: 2px solid white;     /* Creates a pink outline */
+    padding: 20px;               /* Adds space inside the border */
+    border-radius: 10px;         /* Optional: rounds the corners */
+    width: fit-content;          /* Shrinks to fit content */
+    margin: 20px auto;           /* Centers the form horizontally */
+}
+
+form {
+
+}
+
+.TextField {
+    color: white;
+} 
