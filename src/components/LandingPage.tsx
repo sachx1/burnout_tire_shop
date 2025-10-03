@@ -14,18 +14,6 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
   return (
     <div className="formCard">
       <h1>{title}</h1>
-
-     
-      <TextField 
-        className='TextField'
-        id="outlined-basic" 
-        label="Email Address" 
-        variant="outlined" 
-        sx={{
-          color: 'white'
-        }}
-      />
-      <TextField id="outlined-basic" label="Password" variant="outlined" />
     
       {/* TODO: Add your component content here */}
     </div>
