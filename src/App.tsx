@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route, Navigate, Link } from 'react-router-dom';
-import LandingPage from './components/LandingPage'
+import NavBar from './components/NavBar'
 import './App.css';
 
 function App() {
   return (
 
     <div className="App">
-      <LandingPage />
+      <NavBar />
     </div>
   );
 }

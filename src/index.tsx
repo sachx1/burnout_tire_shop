@@ -8,6 +8,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const theme = createTheme({
+  palette: {
+    primary: { main: '#020a11ff' },
+    secondary: { main: '#dc004e' },
+  },
   typography: {
     fontFamily: 'Roboto, sans-serif',
   },

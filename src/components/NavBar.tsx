@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/landingPage.css'
 import TireLogo from './photos/tire_shop_logo.png';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -13,15 +12,11 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 //import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-interface LandingPageProps {
-  /** Optional title to display */
-  title?: string;
-}
 
-const pages = ['Products', 'Pricing', 'Blog']; //Name of the pages for our website
+const pages = ['Products', 'Contact', 'Careers']; //Name of the pages for our website
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];  //Name of the settings for our website
 
-const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
+function NavBar(){
   console.log('🚀 LandingPage rendered'); 
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -49,7 +44,7 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" color= 'primary'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -189,4 +184,4 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
   );
 };
 
-export default LandingPage;
+export default NavBar;
