@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+//import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+//import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 interface LandingPageProps {
   /** Optional title to display */
@@ -19,13 +19,13 @@ interface LandingPageProps {
 }
 
 const pages = ['Products', 'Pricing', 'Blog']; //Name of the pages for our website
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];  //Name of the settings for our website
+//const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];  //Name of the settings for our website
 
 const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
   console.log('🚀 LandingPage rendered'); 
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  //const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   //Handling the open and closing of the menu for pages (mobile)
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,9 +33,9 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
   };
 
   //Handling the open and closing of the user menu
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   //Handling the closing of the pages menu (mobile)
   const handleCloseNavMenu = () => {
@@ -43,9 +43,9 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
   };
 
   //Handling the closing of the user menu
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <div>
@@ -150,7 +150,7 @@ const LandingPage: React.FC<LandingPageProps> =  ({title = "Registration"}) => {
             ))}
           </Box>
 
-          {/* This part of the code deals with the User settings while in desktop */}
+          {/* This part of the code deals with the User settings */}
           {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
