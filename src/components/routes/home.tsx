@@ -3,7 +3,9 @@ import '../styles/home.css';
 
 const home = () => {
   return (
-    <div className='this'>HOME HELLO I AM, HOME</div>
+    <div className='header'>
+      <h1>THIS IS THE HOME PAGE</h1>
+    </div>
   )
 }
 

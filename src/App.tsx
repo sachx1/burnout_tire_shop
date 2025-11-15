@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
 
-    <div className="App">
+    <div style={{ backgroundColor: '#020a11', minHeight: '100vh' }}>
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/Home" replace />} /> {/* This sets the home page to the default page */}

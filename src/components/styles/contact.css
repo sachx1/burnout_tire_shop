@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    height: 100vh;
+    color: white;
+}
+
+.container > div {
+    flex: 1;
+    padding : 20px;
+}
+
+.container > div:nth-child(2){
+    flex: 2;
+    overflow-y: auto;
+}
+
+ol {
+    font-size: large;
+}
+/* Media query for screens with a maximum width of 600px (adjust as needed) */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack containers vertically on smaller screens */
+    height: auto;
+    width: auto;
+  }
+
+  .container > div:nth-child(2){
+    flex: 5;
+  }
+}

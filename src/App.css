@@ -1,9 +1,11 @@
-body {
-  background-color: #282c34;
-}
+/* body { */
+  /* background-color: #282c34; */
+  /* background-color: #020a11; */
+/* } */
 
 .App {
-  background-color: #282c34;
+  background-color: #020a11;
+  min-height: fit-content;
 }
 
 .App-logo {
