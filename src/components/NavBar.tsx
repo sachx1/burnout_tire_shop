@@ -12,8 +12,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 //import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
 
-const pages = ['Products', 'Contact', 'Careers']; //Name of the pages for our website
+const pages = ['Home','Products', 'Contact', 'Careers']; //Name of the pages for our website
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];  //Name of the settings for our website
 
 function NavBar(){
@@ -51,7 +52,6 @@ function NavBar(){
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -63,12 +63,14 @@ function NavBar(){
             }}
           >
           {/* This is the logo for desktop */}
+          <Link to='/Home'>
           <Box
             component="img"
             src= {TireLogo}
             alt="Logo"
             sx={{ height: 130 }}
           />
+          </Link>
           </Typography>
           
           {/* This part of the code refers to the pages when in mobile. */}
@@ -100,9 +102,11 @@ function NavBar(){
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
+                <Link to = {`/${page}`}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -112,7 +116,6 @@ function NavBar(){
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -124,24 +127,29 @@ function NavBar(){
               textDecoration: 'none',
             }}
           >
+          <Link to ='/Home'>
           <img
             src= {TireLogo}
             alt="Logo"
             style={{ height: 150, marginRight: 25, display: 'inline-block' }}
           />
+          </Link>
           </Typography>
 
           {/* This part of the code is the box which holds all the page buttons for when the user is on desktop */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              //This link is a router that helps load other pages
+              <Link to={`/${page}`}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 size="large"
               >
-                {page}
+              {page}
               </Button>
+              </Link>
             ))}
           </Box>
 
