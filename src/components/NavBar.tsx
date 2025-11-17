@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 
-const pages = ['Home','Products', 'Contact', 'Careers']; //Name of the pages for our website
+const pages = ['Home','Products', 'Contact']; //Name of the pages for our website
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];  //Name of the settings for our website
 
 function NavBar(){

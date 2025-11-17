@@ -1,25 +1,36 @@
 import React from 'react';
 import '../styles/contact.css';
+import { useState } from 'react';
 
-function contact () {
+function Contact () {
   
+  const [email, setEmail] = useState("");
+  
+  function handleChange(e: { target: { value: React.SetStateAction<string>; }; }){
+    setEmail(e.target.value);
+  }
+
+  function twilioEmail(e: any){
+    e.preventDefault();
+    if (email === ""){
+      alert("Please enter a valid email");
+    } else if (email !== ""){
+      // do nothing for now
+    }
+  }
+
   return (
   <div className="container">
     <div>
-
-      <h2>Share</h2>
-      <p>LOGOS</p>
-      <br></br>
-
       <h2>Unlock Exclusive Deals</h2>
       <p>Suscribe now for the best deals on tires and mechanic work</p>
       <form>
         <label>
-          Email 
-          <input type="text" name="Email" />
+          <p style={{ margin: '4px' }}>Email</p>
+          <input className='emailInput' type="text" name="Email" placeholder='Email...' value={email} onChange={handleChange}/>
         </label>
       </form>
-      <button>
+      <button className='suscribeButton' onClick={twilioEmail}>
         Subscribe
       </button>
     </div>
@@ -41,10 +52,16 @@ function contact () {
         Yes! We also the best tuners in the industry from all over the world. We have guys from Hondata, Lund Performance, Bimmer Tunes etc. 
         Each of our qualified tuners has years of experience tuning cars. You won't be disappointed.
       </h3>
+      <br></br>
+      <h1>5. Does Burnout Tire Shop Sell Warranties With Their Tunes?</h1>
+      <h3>
+        Yes! We do in fact sell warranties with our tunes. However, our warranty will only cover what was done by our team. If the customer has 
+        in any shape or form modified the car further on their own. We will not honor the warranty. You will need to pay out of pocket for the damages
+        you incurred on your vehicle. 
+      </h3>
     </div>
   </div>
   )
 }
 
-export default contact
-
+export default Contact
