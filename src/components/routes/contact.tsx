@@ -15,7 +15,7 @@ function Contact () {
     if (email === ""){
       alert("Please enter a valid email");
     } else if (email !== ""){
-      // do nothing for now
+      alert(email);
     }
   }
 

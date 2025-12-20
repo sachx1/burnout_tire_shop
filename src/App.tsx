@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/Home" replace />} /> {/* This sets the home page to the default page */}
-        <Route path='/Home' element={<Home />}/>
+        <Route path='/Home' element={<Home />} />
         <Route path='/Products' element={<Products />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Careers' element={<Careers />} />
