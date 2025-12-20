@@ -5,17 +5,27 @@ import { useState } from 'react';
 function Contact () {
   
   const [email, setEmail] = useState("");
+  //const [status, setStatus] = useState("");
   
   function handleChange(e: { target: { value: React.SetStateAction<string>; }; }){
     setEmail(e.target.value);
   }
 
-  function twilioEmail(e: any){
+  async function twilioEmail(e: any){
     e.preventDefault();
-    if (email === ""){
+    if (!email){
       alert("Please enter a valid email");
     } else if (email !== ""){
       alert(email);
+      try {
+          await fetch("http://localhost:5000/api/subscribe", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({email}),
+        });
+      } catch (err){
+        alert("Something went wrong, please try again")
+      }
     }
   }
 
@@ -24,15 +34,15 @@ function Contact () {
     <div>
       <h2>Unlock Exclusive Deals</h2>
       <p>Suscribe now for the best deals on tires and mechanic work</p>
-      <form>
+      <form onSubmit={twilioEmail}>
         <label>
           <p style={{ margin: '4px' }}>Email</p>
-          <input className='emailInput' type="text" name="Email" placeholder='Email...' value={email} onChange={handleChange}/>
+          <input className='emailInput' type="email" name="Email" placeholder='Email...' value={email} onChange={handleChange}/>
         </label>
-      </form>
-      <button className='suscribeButton' onClick={twilioEmail}>
+      <button className="suscribeButton" type="submit">
         Subscribe
       </button>
+      </form>
     </div>
     <div>
       <h1>1. What We Do At Burnout Tire Shop?</h1>
